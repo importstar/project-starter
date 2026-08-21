@@ -1,0 +1,26 @@
+name: "🐛 [BUG] Bug Report / Defect"
+description: "แจ้งข้อผิดพลาดที่เกิดขึ้นไม่ตรงกับ Acceptance Criteria ใน Spec"
+title: "[BUG] <สรุปอาการของ Bug>"
+labels: ["kind/bug", "status/triage"]
+body:
+  - type: input
+    id: feat_reference
+    attributes:
+      label: "Related Feature Spec"
+      placeholder: "FEAT-001"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "พฤติกรรมที่พบ vs พฤติกรรมที่ควรจะเป็น (Expected vs Actual)"
+      placeholder: "ตาม Acceptance Criteria ข้อ 2 ระบุว่าต้องขึ้นสีเขียว แต่หน้าจอแสดง Error สีแดง"
+    validations:
+      required: true
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: "ขั้นตอนการเกิดปัญหา (Steps to Reproduce)"
+      placeholder: "1. เข้าสู่หน้า...\n2. กดปุ่ม...\n3. พบว่า..."
+    validations:
+      required: true

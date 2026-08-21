@@ -1,0 +1,31 @@
+name: Spec & Governance Lint
+
+on:
+  pull_request:
+    paths:
+      - '.specs/**'
+      - 'AGENTS.md'
+      - 'tokens.json'
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-specs:
+    name: Validate Spec Structure & Formats
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate Markdown Files Exist & Structure
+        run: |
+          echo "Checking .specs directory..."
+          test -d .specs/features
+          test -d .specs/rfcs
+          test -d .specs/amendments
+          test -d .specs/writeups
+          echo "Checking AGENTS.md & tokens.json..."
+          test -f AGENTS.md
+          test -f tokens.json
+          echo "Spec structure validation passed!"

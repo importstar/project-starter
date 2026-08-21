@@ -1,0 +1,8 @@
+pre-commit:
+  parallel: true
+  commands:
+    secrets-audit:
+      tags: security
+      run: grep -rnE '(AIza[0-9A-Za-z-_]{35}|ghp_[0-9A-Za-z]{36}|sk-[a-zA-Z0-9]{48}|BEGIN PRIVATE KEY)' {staged_files} && exit 1 || exit 0
+    trailing-whitespace:
+      run: sed -i 's/[ \t]*$//' {staged_files}

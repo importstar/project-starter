@@ -1,0 +1,38 @@
+name: "🔄 [CR] Change Request"
+description: "ยื่นขอเปลี่ยนแปลงสโคปหรือ Requirement ที่อยู่นอกเหนือจาก SOW / Baseline"
+title: "[CR] <หัวข้อการขอเปลี่ยนสโคป>"
+labels: ["kind/change-request", "status/pending-evaluation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### ⚠️ นโยบาย Change Request
+        การเปลี่ยนแปลงความต้องการหลังจาก Gate 0 / Gate 1 Sign-off จะต้องได้รับการประเมินผลกระทบด้านระยะเวลาและค่าใช้จ่าย
+  - type: input
+    id: cr_id
+    attributes:
+      label: "CR ID"
+      placeholder: "CR-001"
+    validations:
+      required: true
+  - type: input
+    id: requested_by
+    attributes:
+      label: "ผู้ขอยื่นเปลี่ยน (Requested By)"
+      placeholder: "ชื่อลูกค้า หรือ PM"
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: "เหตุผลและความจำเป็น (Business Justification)"
+      placeholder: "อธิบายว่าทำไมถึงต้องเปลี่ยน..."
+    validations:
+      required: true
+  - type: textarea
+    id: impact_analysis
+    attributes:
+      label: "ผลกระทบต่อระบบเดิม (Impacted Features / APIs)"
+      placeholder: "กระทบกับ FEAT-002 และ Endpoint /api/v1/orders"
+    validations:
+      required: false

@@ -1,0 +1,45 @@
+name: "🚀 [FEAT] Feature Specification"
+description: "ยื่นร่างหรือเปิดประเด็น Feature ใหม่ตามกระบวนการ Phase 1 / Phase 3"
+title: "[FEAT] <ชื่อฟีเจอร์>"
+labels: ["kind/feature", "status/draft"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 📋 แบบฟอร์มเสนอ Feature Specification
+        โปรดกรอกรายละเอียดเบื้องต้นก่อนสร้างเอกสารตัวเต็มใน `.specs/features/FEAT-XXX.md`
+  - type: input
+    id: feature_id
+    attributes:
+      label: "Feature ID"
+      description: "รหัสฟีเจอร์ เช่น FEAT-001"
+      placeholder: "FEAT-001"
+    validations:
+      required: true
+  - type: textarea
+    id: user_story
+    attributes:
+      label: "User Story"
+      description: "As a [role], I want to [action], so that [benefit]"
+      placeholder: "As a member, I want to filter order history by date range..."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria (BDD Given-When-Then)"
+      description: "เงื่อนไขการตรวจรับงาน"
+      value: |
+        ### Scenario 1: Happy Path
+        * **Given** 
+        * **When** 
+        * **Then** 
+    validations:
+      required: true
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: "Out of Scope (สิ่งที่ไม่ทำในรอบนี้)"
+      placeholder: "1. ไม่รองรับการ export เป็น PDF ในเฟสนี้"
+    validations:
+      required: false

@@ -1,0 +1,50 @@
+# Environment and Local Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE & Editor Configs
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Node / JS Dependencies & Outputs
+node_modules/
+dist/
+build/
+.turbo/
+.next/
+.svelte-kit/
+.output/
+
+# Python Dependencies & Virtual Envs
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Coverage and Logs
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Scratch & Temporary Notes
+scratch/
+tmp/
+*.tmp
