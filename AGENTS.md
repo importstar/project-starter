@@ -93,4 +93,4 @@ BMAD ใช้เฉพาะ **Gate 0–1** (Requirement) ส่วน **Gate 2
 * **ลำดับความสำคัญ**: กฎในไฟล์นี้ชนะ Default ของ pstack และ BMAD เสมอ
 * **Always-pause**: หยุดและถามมนุษย์ทุกครั้ง แม้ได้รับ Autonomy เต็มที่ ในกรณี Sign-off ทุก Gate, การเพิ่ม Library ใหม่, การลบหรือแก้ Test เดิม
 * **ห้ามติดตั้ง BMAD skill นอก Gate 0–1 กลับเข้ามา**: CI (`spec-lint.yml`) จะ Fail หากพบ
-* **Model ของ pstack**: ตั้งค่าต่อเครื่องด้วย `/pstack:setup-pstack` (เขียนลง `~/.claude/rules/pstack-models.md`)
+* **Model ของ pstack**: ใช้ร่วมกันทั้งทีมที่ `.claude/rules/pstack-models.md` (Session หลัก Opus medium, Subagent ทำงาน Sonnet high, งาน Explore/Verify Haiku) ห้ามมี `~/.claude/rules/pstack-models.md` ในเครื่องซ้อนกัน หากต้องการเปลี่ยนให้แก้ไฟล์ใน Repo ผ่าน PR

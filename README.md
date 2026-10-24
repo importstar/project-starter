@@ -87,7 +87,7 @@ rm -rf apps/api/.git
 
 ### สำหรับผู้ใช้ Claude Code (ทุกคนในทีม)
 1. เปิดโปรเจกต์ด้วย `claude` แล้วกด Trust folder → Claude Code จะถามให้ติดตั้ง Plugin **pstack** (จาก `cursor/plugins`) ให้กดยอมรับ
-2. ตั้งค่า Model ของ pstack หนึ่งครั้งต่อเครื่อง: `/pstack:setup-pstack`
+2. Model ของ pstack ตั้งไว้แล้วใน `.claude/rules/pstack-models.md` (ใช้ร่วมกันทั้งทีม) ไม่ต้องรัน `/pstack:setup-pstack` และอย่าสร้าง `~/.claude/rules/pstack-models.md` ซ้อน
 3. `CLAUDE.md` เป็น symlink ไปที่ `AGENTS.md` ให้แก้กฎที่ `AGENTS.md` เท่านั้น
 4. ใช้เครื่องมือตาม Gate (รายละเอียดใน `AGENTS.md` หมวด 5):
 
