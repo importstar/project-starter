@@ -26,7 +26,10 @@
 │   ├── amendments/       # Change Requests (CR-XXX.md) - Signed-off amendments
 │   └── writeups/         # Handover docs, Post-mortems, Implementation notes
 ├── .github/              # Issue templates, PR templates, GitHub Actions CI
-├── AGENTS.md             # Master Agent rules (This file)
+├── .agents/skills/       # BMAD Skills (Gate 0–1 เท่านั้น) - Canonical copy
+├── .claude/              # Claude Code: settings.json, hooks/, agents/, skills -> ../.agents/skills
+├── _bmad/                # BMAD config (Installer-managed ห้ามแก้ด้วยมือ ยกเว้น _bmad/custom/)
+├── AGENTS.md             # Master Agent rules (This file) - CLAUDE.md คือ symlink มาที่ไฟล์นี้
 ├── tokens.json           # Design Tokens (Colors, Typography, Spacing from Figma)
 ├── lefthook.yml          # Git hooks for linting, secret scanning, and type checks
 └── apps/                 # Application Source Code (Added in Phase 2)
@@ -70,3 +73,24 @@
 # 4. ทดสอบ Build เพื่อความมั่นใจ
 # npm run build
 ```
+
+> เมื่อติดตั้ง `apps/` ใน Phase 2 แล้ว ให้แทนที่คำสั่งด้านบนด้วยคำสั่งจริงของโปรเจกต์
+
+---
+
+## 🤖 5. AI Workflow ตาม Gate (BMAD → pstack)
+
+BMAD ใช้เฉพาะ **Gate 0–1** (Requirement) ส่วน **Gate 2 เป็นต้นไป** (Design, Implement, Review) ใช้ pstack เท่านั้น
+
+| Gate | ผลลัพธ์ | เครื่องมือ |
+| :--- | :--- | :--- |
+| Gate 0: Scope Hardening | Brief / PRD | `bmad-product-brief`, `bmad-prfaq`, `bmad-deep-recon`, `bmad-brainstorming`, `bmad-forge-idea` → `bmad-prd` |
+| Gate 1: Feature DoR | `.specs/features/FEAT-XXX.md` | `bmad-spec`, `bmad-create-epics-and-stories`, `bmad-ux` → ตรวจด้วย subagent `spec-reviewer` |
+| Gate 2: Technical RFC | `.specs/rfcs/RFC-XXX.md` | `/pstack:architect`, `/pstack:how`, `/pstack:technical-writing` (ใช้ `RFC-template.md`) |
+| Gate 3: Implement & DoD | Code + Tests + PR | `/pstack:poteto-mode implement .specs/rfcs/RFC-XXX.md`, `/pstack:tdd` → Review ด้วย `/pstack:interrogate`, `/pstack:no-comments` |
+
+* **Skill ของ pstack ไม่ถูกเรียกอัตโนมัติ**: ต้องพิมพ์ `/pstack:<skill>` เองเสมอ
+* **ลำดับความสำคัญ**: กฎในไฟล์นี้ชนะ Default ของ pstack และ BMAD เสมอ
+* **Always-pause**: หยุดและถามมนุษย์ทุกครั้ง แม้ได้รับ Autonomy เต็มที่ ในกรณี Sign-off ทุก Gate, การเพิ่ม Library ใหม่, การลบหรือแก้ Test เดิม
+* **ห้ามติดตั้ง BMAD skill นอก Gate 0–1 กลับเข้ามา**: CI (`spec-lint.yml`) จะ Fail หากพบ
+* **Model ของ pstack**: ตั้งค่าต่อเครื่องด้วย `/pstack:setup-pstack` (เขียนลง `~/.claude/rules/pstack-models.md`)

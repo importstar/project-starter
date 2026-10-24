@@ -1,7 +1,7 @@
 # Change Request Form: [CR-XXX] [ชื่อรายการขอเปลี่ยนแปลง]
 
 * **CR Number**: `CR-XXX`
-* **Related Feature**: [`FEAT-XXX.md`](file:///home/jakee/Projects/IMPS-Pipeline/.specs/features/FEAT-XXX.md)
+* **Related Feature**: [`FEAT-XXX.md`](../features/FEAT-XXX.md)
 * **Date Requested**: [YYYY-MM-DD]
 * **Requested By**: [ชื่อตัวแทนลูกค้า / ฝั่งธุรกิจ]
 * **Impact Analyzed By**: [ชื่อ PM / Spec Agent]

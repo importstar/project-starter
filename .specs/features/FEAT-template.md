@@ -6,7 +6,7 @@
 * **Author / Spec Owner**: [ชื่อ PM / Lead]
 * **Sign-off By (Gate 1)**: [ชื่อ PM] & [ชื่อ Tech Lead]
 * **Created Date**: [YYYY-MM-DD]
-* **Related RFC**: [`RFC-XXX.md`](file:///home/jakee/Projects/IMPS-Pipeline/.specs/rfcs/RFC-XXX.md)
+* **Related RFC**: [`RFC-XXX.md`](../rfcs/RFC-XXX.md)
 
 ---
 

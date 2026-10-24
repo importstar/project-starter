@@ -1,7 +1,7 @@
 # RFC & Technical Architecture: [RFC-XXX] [ชื่อสถาปัตยกรรมทางเทคนิค]
 
 * **RFC ID**: `RFC-XXX`
-* **Feature Reference**: [`FEAT-XXX.md`](file:///home/jakee/Projects/IMPS-Pipeline/.specs/features/FEAT-XXX.md)
+* **Feature Reference**: [`FEAT-XXX.md`](../features/FEAT-XXX.md)
 * **Status**: `PROPOSED` | `UNDER_REVIEW` | `APPROVED (Gate 2 Passed)` | `SUPERSEDED`
 * **Author / Dev Owner**: [ชื่อ Developer / AI Agent]
 * **Architecture Reviewer (Gate 2)**: [ชื่อ Tech Lead / Architect]

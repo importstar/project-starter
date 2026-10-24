@@ -48,3 +48,7 @@ pnpm-debug.log*
 scratch/
 tmp/
 *.tmp
+
+# Claude Code (personal overrides)
+.claude/settings.local.json
+CLAUDE.local.md

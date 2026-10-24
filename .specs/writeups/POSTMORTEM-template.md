@@ -8,8 +8,8 @@
 * **Status**: `INVESTIGATING` | `MITIGATED` | `ACTION_ITEMS_PENDING` | `COMPLETED`
 * **Lead Investigator**: [ชื่อ Tech Lead / Incident Commander]
 * **Incident Responders**: [รายชื่อทีม Dev, DevOps, QA, PM ที่ร่วมแก้ไข]
-* **Related Feature**: [`FEAT-XXX.md`](file:///home/jakee/Projects/IMPS-Pipeline/.specs/features/FEAT-XXX.md)
-* **Related RFC**: [`RFC-XXX.md`](file:///home/jakee/Projects/IMPS-Pipeline/.specs/rfcs/RFC-XXX.md)
+* **Related Feature**: [`FEAT-XXX.md`](../features/FEAT-XXX.md)
+* **Related RFC**: [`RFC-XXX.md`](../rfcs/RFC-XXX.md)
 * **Related Hotfix / Release**: `hotfix/vX.X.X` (Patch Release `v1.0.1`)
 
 ---

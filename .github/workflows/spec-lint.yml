@@ -6,6 +6,9 @@ on:
       - '.specs/**'
       - 'AGENTS.md'
       - 'tokens.json'
+      - '.agents/**'
+      - '.claude/**'
+      - '_bmad/**'
   push:
     branches:
       - main
@@ -29,3 +32,6 @@ jobs:
           test -f AGENTS.md
           test -f tokens.json
           echo "Spec structure validation passed!"
+
+      - name: Validate BMAD Skills (Gate 0-1 allowlist)
+        run: bash .github/scripts/check-skills.sh

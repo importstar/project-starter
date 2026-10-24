@@ -61,7 +61,7 @@ flowchart LR
 ## 🚀 Quick Start Guide
 
 ### สำหรับ PM / BA (Phase 1: Discovery)
-1. สร้าง Feature Spec ใหม่จาก [`.specs/features/FEAT-template.md`](file:///.specs/features/FEAT-template.md) และตั้งชื่อเป็น `FEAT-001-[feature-name].md`
+1. สร้าง Feature Spec ใหม่จาก [`.specs/features/FEAT-template.md`](.specs/features/FEAT-template.md) และตั้งชื่อเป็น `FEAT-001-[feature-name].md`
 2. เขียน User Story, Given-When-Then Acceptance Criteria, และระบุ Out-of-Scope ให้ครบถ้วน
 3. เมื่อตรวจสอบครบตาม DoR Checklist ให้ทำ Gate 1 Sign-off
 
@@ -85,10 +85,24 @@ rm -rf apps/api/.git
 # 3. อัปเดต Tech Stack ใน AGENTS.md ให้ตรงกับโค้ดจริง
 ```
 
+### สำหรับผู้ใช้ Claude Code (ทุกคนในทีม)
+1. เปิดโปรเจกต์ด้วย `claude` แล้วกด Trust folder → Claude Code จะถามให้ติดตั้ง Plugin **pstack** (จาก `cursor/plugins`) ให้กดยอมรับ
+2. ตั้งค่า Model ของ pstack หนึ่งครั้งต่อเครื่อง: `/pstack:setup-pstack`
+3. `CLAUDE.md` เป็น symlink ไปที่ `AGENTS.md` ให้แก้กฎที่ `AGENTS.md` เท่านั้น
+4. ใช้เครื่องมือตาม Gate (รายละเอียดใน `AGENTS.md` หมวด 5):
+
+| Gate | เครื่องมือ |
+| :--- | :--- |
+| 0–1 (Scope, FEAT) | BMAD: `bmad-prd`, `bmad-spec`, `bmad-ux` … และ subagent `spec-reviewer` |
+| 2 (RFC) | `/pstack:architect` |
+| 3 (Implement, Review) | `/pstack:poteto-mode implement .specs/rfcs/RFC-XXX.md` → `/pstack:interrogate` |
+
+> Skill ของ pstack ไม่ถูกเรียกอัตโนมัติ ต้องพิมพ์ `/pstack:<skill>` เอง
+
 ---
 
 ## 🛡️ Git & PR Conventions
 
 1. ทุก Feature Branch ต้องมีชื่อในรูปแบบ: `feat/FEAT-XXX-short-name`
 2. ทุก Bugfix Branch ต้องมีชื่อในรูปแบบ: `fix/BUG-XXX-short-name`
-3. ทุก Pull Request ต้องแนบ Checklist ตาม [Pull Request Template](file:///.github/pull_request_template.md)
+3. ทุก Pull Request ต้องแนบ Checklist ตาม [Pull Request Template](.github/pull_request_template.md)
