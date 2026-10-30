@@ -51,4 +51,8 @@ tmp/
 
 # Claude Code (personal overrides)
 .claude/settings.local.json
+.claude/user-role.local
 CLAUDE.local.md
+
+# BMAD generated output (Gate 0–1 drafts; promote finals into .specs/)
+_bmad-output/

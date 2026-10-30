@@ -94,3 +94,11 @@ BMAD ใช้เฉพาะ **Gate 0–1** (Requirement) ส่วน **Gate 2
 * **Always-pause**: หยุดและถามมนุษย์ทุกครั้ง แม้ได้รับ Autonomy เต็มที่ ในกรณี Sign-off ทุก Gate, การเพิ่ม Library ใหม่, การลบหรือแก้ Test เดิม
 * **ห้ามติดตั้ง BMAD skill นอก Gate 0–1 กลับเข้ามา**: CI (`spec-lint.yml`) จะ Fail หากพบ
 * **Model ของ pstack**: ใช้ร่วมกันทั้งทีมที่ `.claude/rules/pstack-models.md` (Session หลัก Opus medium, Subagent ทำงาน Sonnet high, งาน Explore/Verify Haiku) ห้ามมี `~/.claude/rules/pstack-models.md` ในเครื่องซ้อนกัน หากต้องการเปลี่ยนให้แก้ไฟล์ใน Repo ผ่าน PR
+
+---
+
+## 👤 6. User Role (ถามครั้งแรก แล้วจำไว้)
+
+* Role ของผู้ใช้แต่ละคนเก็บที่ `.claude/user-role.local` (gitignored เป็นค่าส่วนตัวของแต่ละเครื่อง) ค่าเป็น key เดียว: `pm`, `tech-lead`, `dev`, `qa`, `designer`
+* ถ้าไฟล์ยังไม่มี: ถามผู้ใช้ว่าตำแหน่งอะไรก่อนเริ่มงาน แล้วเขียน key ลงไฟล์ (Claude Code ทำผ่าน SessionStart hook `.claude/hooks/user-role.sh` ให้อัตโนมัติ)
+* แนะนำ Gate, Skill และขั้นตอนตาม Playbook ใน `.claude/roles/<key>.md` เท่านั้น ถ้าผู้ใช้ขอทำงานนอก Role ให้ทำได้ แต่เตือนเรื่อง Gate/Sign-off ที่เกี่ยวข้อง
